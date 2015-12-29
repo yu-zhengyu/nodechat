@@ -11,7 +11,7 @@ It has features below:
 
 # how to use
 ```
-* cd filename
-* npm install
-* node app.js
+1. cd ../nodechat
+2. npm install
+3. node app.js
 ```
