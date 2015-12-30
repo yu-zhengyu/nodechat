@@ -20,12 +20,17 @@ io.sockets.on('connection', function(socket){
             socket.nickname = data;
             nicknameArray.push(socket.nickname);
             io.sockets.emit('usernames', nicknameArray );
-            
         }
     });
     
+    socket.on('disconnect', function(data){
+        if(!nicknameArray) return;
+        nicknameArray.splice(nicknameArray.indexOf(socket.nickname), 1);
+        io.sockets.emit('usernames', nicknameArray );
+    });
+    
     socket.on('send message', function(data){
-       io.sockets.emit('new message', data); // send message for every one include me
+       io.sockets.emit('new message', {msg:data, nick:socket.nickname}); // send message for every one include me
     });
 });
 

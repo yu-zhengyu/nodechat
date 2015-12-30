@@ -68,7 +68,8 @@
                });
                
                socket.on('new message', function(data){
-                  $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" +  data + "<br/>"); 
+                  $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" +  
+                    data.nick + ": " + data.msg + "<br/>"); 
                });
             });
         </script>
