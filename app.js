@@ -1,7 +1,8 @@
 var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
+    io = require('socket.io').listen(server),
+    nicknameArray = [];
 
 server.listen(3000);
 
@@ -11,7 +12,20 @@ app.get("/", function(req, res) {
 });
 
 io.sockets.on('connection', function(socket){
+    socket.on('new user', function(data, callback){
+        if(nicknameArray.indexOf(data) != -1) {
+            callback(false);
+        } else { 
+            callback(true);
+            socket.nickname = data;
+            nicknameArray.push(socket.nickname);
+            io.sockets.emit('usernames', nicknameArray );
+            
+        }
+    });
+    
     socket.on('send message', function(data){
        io.sockets.emit('new message', data); // send message for every one include me
     });
 });
+
