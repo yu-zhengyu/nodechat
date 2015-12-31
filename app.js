@@ -33,4 +33,3 @@ io.sockets.on('connection', function(socket){
        io.sockets.emit('new message', {msg:data, nick:socket.nickname}); // send message for every one include me
     });
 });
-
