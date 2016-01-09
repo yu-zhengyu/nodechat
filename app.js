@@ -32,6 +32,7 @@ app.get("/", function(req, res) {
 app.use(express.static('public'));
 
 io.sockets.on('connection', function(socket){
+
     Chat.find({}, function(err, docs) {
         if(err){
             throw err;

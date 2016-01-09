@@ -24,14 +24,14 @@ jQuery(function($){
           }
       });
       $nicknameBox.val('');
+
    });
-   
+  
+
   socket.on('load message', function(docs) {
     for(var i = 0; i < docs.length; i++) {
       displaymes(docs[i]);
     }
-    var div = document.getElementById('chat');
-    div.scrollTop = div.scrollHeight; 
   });
 
    socket.on('new message', function(data){
@@ -42,5 +42,6 @@ jQuery(function($){
     $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" + data.nick + ": " + data.msg + "<br/>");
     var div = document.getElementById('chat');
     div.scrollTop = div.scrollHeight; 
+
    }
 });
