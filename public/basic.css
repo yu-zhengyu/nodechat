@@ -1,0 +1,15 @@
+#chat {
+    overflow:auto;
+    height:500px;
+    width: 200px;
+}
+#contentWrap {
+    display: none;
+}
+#chatWrap {
+    float: left;
+    border: 2px #000 solid;
+}
+#inputWarp {
+    margin-left: 20px;
+}

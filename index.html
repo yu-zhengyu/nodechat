@@ -1,19 +1,10 @@
 <html>
     <head>
         <title>Chat room</title>
-        <style>
-            #chat {
-                height:500px;
-            }
-            #contentWrap {
-                display: none;
-            }
-            #chatWrap {
-                float: left;
-                border: 1px #000 solid;
-            }
+        <style src="basic.css">
         </style>        
     </head>
+    <link rel="stylesheet" href="basic.css" type="text/css" />
     <body>
         <div id="nickName">
             <p>Please input your nick name</p>
@@ -26,52 +17,18 @@
         
         <div id="contentWrap">
             <div id="chatWrap">
-                <div id="chat"></div>
+                <div id="chat">
+                </div>
+            </div>
+            <div id="inputWarp">
                 <form id="send-message">
                     <input size="35" id="message">
                     <input type="submit">
                 </form>
             </div>
-            <div id="user">
-            </div>
         </div>
-        
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
-        <script>
-            jQuery(function($){
-               var socket = io.connect();
-               var $messageForm = $('#send-message');
-               var $messageBox = $('#message');
-               var $chat = $('#chat');
-               var $nicknameForm = $('#setNick');
-               var $nicknameError = $('#nickNameError');
-               var $nicknameBox = $('#nickname');
-               
-               $messageForm.submit(function(e){
-                  e.preventDefault();
-                  socket.emit('send message', $messageBox.val());
-                  $messageBox.val(''); 
-               });
-               
-               $nicknameForm.submit(function(e) {
-                  e.preventDefault();
-                  socket.emit('new user', $nicknameBox.val(), function(data) { 
-                      if(data) {
-                          $('#nickName').hide();
-                          $('#contentWrap').show();
-                      } else {
-                          $nicknameError.html("This name is already exist.");
-                      }
-                  });
-                  $nicknameBox.val('');
-               });
-               
-               socket.on('new message', function(data){
-                  $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" +  
-                    data.nick + ": " + data.msg + "<br/>"); 
-               });
-            });
-        </script>
+        <script src="basic.js"></script>
     </body>
 </html>
