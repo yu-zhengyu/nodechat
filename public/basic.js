@@ -39,7 +39,7 @@ jQuery(function($){
    });
 
    function displaymes(data) {
-    $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" + data.nick + ": " + data.msg + "<br/>");
+    $chat.append(Date().toLocaleString().slice(0, -14) + "<br/>" + data.nick + ": " + data.msg + "<br/><br/>");
     var div = document.getElementById('chat');
     div.scrollTop = div.scrollHeight; 
 

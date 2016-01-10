@@ -1,15 +1,28 @@
 #chat {
     overflow:auto;
     height:500px;
-    width: 200px;
+    width: 624px;
 }
 #contentWrap {
     display: none;
 }
 #chatWrap {
-    float: left;
+	width: 624px;
+    float: bottom;
     border: 2px #000 solid;
 }
 #inputWarp {
     margin-left: 20px;
+}
+
+#inputWarp {
+	padding-left: 20px;
+}
+
+#inputbutton {
+	padding:5px;
+	background-color: #dcdcdc;
+	border: 1px solid #666;
+	color:#000;
+	text-decoration:none;
 }

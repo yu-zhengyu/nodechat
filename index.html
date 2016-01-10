@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Chat room</title>
-        <style src="basic.css">
-        </style>        
+        <style src="basic.css"></style>
     </head>
     <link rel="stylesheet" href="basic.css" type="text/css" />
     <body>
@@ -10,20 +9,20 @@
             <p>Please input your nick name</p>
             <p id="nickNameError"></p>
             <form id="setNick">
-                <input size="35" id="nickname">
-                <input type="submit">
+                <input size="35" id="nickname" placeholder="Nick Name">
+                <input id="inputbutton" type="submit">
             </form>
         </div>
-        
         <div id="contentWrap">
             <div id="chatWrap">
                 <div id="chat">
                 </div>
             </div>
+            <br/>
             <div id="inputWarp">
                 <form id="send-message">
-                    <input size="35" id="message">
-                    <input type="submit">
+                    <input size="35" id="message" placeholder="Input message">
+                    <input id="inputbutton" type="submit" >
                 </form>
             </div>
         </div>
