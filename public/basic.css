@@ -2,8 +2,11 @@
     overflow:auto;
     height:500px;
     width: 624px;
+    margin: 0 auto;
 }
 #contentWrap {
+	width: 624px;
+	margin: 0 auto;
     display: none;
 }
 #chatWrap {
@@ -16,13 +19,21 @@
 }
 
 #inputWarp {
+	width: 300px;
+	margin: 0 auto;
 	padding-left: 20px;
 }
 
-#inputbutton {
-	padding:5px;
-	background-color: #dcdcdc;
-	border: 1px solid #666;
-	color:#000;
-	text-decoration:none;
+#send-message {
+	width: 700px;
+	margin: 0 auto;
+}
+
+#setNick {
+	width: 500px;
+}
+
+#nickName {
+	width: 450px;
+	margin: 0 auto;
 }
