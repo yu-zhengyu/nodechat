@@ -33,6 +33,7 @@ app.use(express.static('public'));
 
 io.sockets.on('connection', function(socket){
 
+    // load message
     Chat.find({}, function(err, docs) {
         if(err){
             throw err;
